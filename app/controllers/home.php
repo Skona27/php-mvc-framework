@@ -6,7 +6,7 @@
 
 class Home extends Controller {
 
-	public function index($string) {
+	public function index() {
 
 		$this->view('home/index',
 			['active' => 'home/index']
