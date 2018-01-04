@@ -1,28 +1,54 @@
 <?php
 
-/**
-* 
-*/
+/*
+ * PDO Database Class
+ * Connect to the database
+ * Create and execute statements
+ * Bind values
+ * Return results
+ */
 
 class Database {
 
 	private static 	$_instance;
+
+	private 		$_host		= 	DB_HOST,
+					$_username	=	DB_USER,
+					$_password	=	DB_PASS,
+					$_dbname	=	DB_NAME;
+
 	private 		$_pdo,
+					$_query,
 					$_results,
-					$_error = false;
+					$_error;
+
 
  	private function __construct() {
+ 		// Set DSN
+ 		$dsn = 'mysql:host=' . $this->_host . ';dbname=' . $this->_dbname;
+
+ 		// PDO attributes
 		$options  = array(
-            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES   => FALSE,
+            PDO::ATTR_ERRMODE            	=> PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE 	=> PDO::FETCH_OBJ,
+            PDO::ATTR_EMULATE_PREPARES   	=> FALSE,
+            PDO::ATTR_PERSISTENT			=> TRUE,
         );
 
-	    $this->_pdo = new PDO('mysql:host='.Config::get('mysql/host').';dbname='.Config::get('mysql/db').';charset=utf8', Config::get('mysql/username'), Config::get('mysql/password'), $options);
+		// Create PDO instance
+		try {
+			$this->_pdo = new PDO($dsn, $this->_username, $this->_password, $options);
+
+		} catch(PDOException $e) {
+			// If error occured, echo error message
+			$this->_error = $e->getMessage();
+			echo $this->_error;
+			// die();
+		}
 	}
 
 	public static function instance() {
-	 	if(!isset(self::$_instance)) {
+	 	if (!isset(self::$_instance)) {
 			self::$_instance = new Database();
 		}		
 		return self::$_instance;
@@ -41,17 +67,5 @@ class Database {
 	    }
 
 	    return $this;
-	}
-
-	public function error() {
-		return $this->_error;
-	}
-
-	public function results() {
-		return $this->_results;
-	}
-
-	public function first() {
-		return $this->_results[0];
 	}
 }
