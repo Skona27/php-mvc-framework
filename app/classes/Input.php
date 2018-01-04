@@ -1,7 +1,9 @@
 <?php
 
 /*
- * 
+ * Input Class
+ * Get input data send by user
+ * Sanitize input data
  */
 
 class Input {

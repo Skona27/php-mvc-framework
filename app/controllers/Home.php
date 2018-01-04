@@ -1,8 +1,8 @@
 <?php
 
-/**
-* 
-*/
+/*
+ * Home Controller
+ */
 
 class Home extends Controller {
 
@@ -10,6 +10,9 @@ class Home extends Controller {
 
 		// GET request
 		Request::method('GET', function(){
+
+
+
 		
 			// Load the view, pass data
 			$this->view('home/index',

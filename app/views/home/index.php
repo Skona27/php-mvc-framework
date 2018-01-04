@@ -5,8 +5,6 @@
 
 		<li>Controller</li>
 
-		<li>Config</li>
-
 		<li>Database
 			<ul>
 				<li> Creating connection
@@ -14,7 +12,7 @@
 				</li>
 
 				<li> Selecting data
-					<pre>Database::instance()->query('SELECT * FROM table WHERE field=?', [Value1]);</pre>
+					<pre>Database::instance()->query('SELECT * FROM table WHERE field= :field', ['field' => Value1]);</pre>
 					<ul>
 						<li>See results
 							<pre>(...)->results();</pre> Returns array of data.
@@ -26,7 +24,7 @@
 				</li>
 
 				<li> Inserting data
-					<pre>Database::instance()->query('INSERT INTO table VALUES (?, ?)', ['Value1', 'Value2']);</pre>	
+					<pre>Database::instance()->query('INSERT INTO table VALUES (:field1, :field2)', ['field1' => Value1', 'field2' => Value2']);</pre>	
 					<ul>
 						<li>Error check
 							<pre>(...)->error();</pre> Returns boolean.
@@ -39,7 +37,7 @@
 		<li>Request
 			<ul>
 				<li>Request check
-					<pre>Request::exists('string');</pre> Default value 'POST', accepts 'GET'. Returns boolean.
+					<pre>Request::method('string', callback);</pre> Default value 'GET', runs callback.
 				</li>
 			</ul>
 		</li>

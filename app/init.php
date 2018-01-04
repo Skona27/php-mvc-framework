@@ -8,7 +8,7 @@
 
 
 // Root for the app directory
-define('APPROOT', dirname(__FILE__));
+define('APP_ROOT', dirname(__FILE__));
 
 // Public URL
 define('URL', 'http://localhost/php-mvc-framework');
@@ -18,6 +18,9 @@ define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', 'root');
 define('DB_NAME', 'php-mvc-framework');
+
+// Start session
+session_start();
 
 // Autoload classes
 spl_autoload_register(function ($class) {
