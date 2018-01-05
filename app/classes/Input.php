@@ -16,6 +16,9 @@ class Input {
 		else if(isset($_GET[$item])) {
 			return self::sanitize($_GET[$item]);
 		}
+		else if(isset($_FILES[$item])) {
+			return $_FILES[$item];
+		}
 
 		else return '';
 	}

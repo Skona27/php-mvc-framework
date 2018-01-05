@@ -1,4 +1,9 @@
 
+	<form action="<?=URL?>/home" method="POST" enctype="multipart/form-data">
+		<input type="file" name="file">
+		<input type="submit"">
+	</form>
+
 	<h3>Classes:</h3>
 	<ul>
 		<li>App</li>
