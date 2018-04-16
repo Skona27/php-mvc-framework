@@ -25,7 +25,7 @@ define('DB_NAME', 'php-mvc-framework');
 
 
 // File maximum size, in mb
-define('FILE_MAX_SIZE', 2);
+define('FILE_MAX_SIZE', 4);
 
 // Allowed extensions
 define('FILE_EXT', array(

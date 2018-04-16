@@ -7,11 +7,8 @@
 class Home extends Controller {
 
 	public function index() {
-
 		// GET request
 		Request::method('GET', function(){
-
-
 		
 			// Load the view, pass data
 			$this->view('home/index',
@@ -22,14 +19,13 @@ class Home extends Controller {
 
 		//POST request
 		Request::method('POST', function(){
-
 			// Instantiane new file from the 'file' input
 			$file = new File(Input::get('file'));
 
 			// Try to upload it
 			$file->upload();
 
-			//File::delete();
+			// File::delete();
 
 			// Print error msg if error occured
 			if ($file->error()) {
@@ -37,7 +33,6 @@ class Home extends Controller {
 			} else {
 				echo "File uploaded!";
 			}
-
 		});
 	}
 }

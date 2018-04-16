@@ -6,7 +6,8 @@
 
 	<h3>Classes:</h3>
 	<ul>
-		<li>App</li>
+		<li>App
+		</li>
 
 		<li>Controller</li>
 
