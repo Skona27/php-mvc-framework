@@ -58,15 +58,14 @@ class File {
 	}
 
 	public function upload() {
-
 		// Check for the error 
 		if (!$this->_error) {
 
 			// Set file destination as path/name.ext
-			$destination = $this->_path .'/'. $this->_name .'.'. $this->_ext;
+			$path = $this->_path .'/'. $this->_name .'.'. $this->_ext;
 
 			// Try to move file
-			if (!move_uploaded_file($this->_tmpName, $destination)) {
+			if (!move_uploaded_file($this->_tmpName, $path)) {
 				// Set error
 				$this->_error = 7;
 			}
@@ -88,6 +87,11 @@ class File {
 	public function error() {
 		// Return if error exists
 		return ($this->_error) ? true : false;
+	}
+
+	public function name() {
+		// return file new name plus ext
+		return $this->_name .'.'. $this->_ext;
 	}
 
 	public function messageError() {

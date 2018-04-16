@@ -1,12 +1,8 @@
 
-	<form action="<?=URL?>/home" method="POST" enctype="multipart/form-data">
-		<input type="file" name="file">
-		<input type="submit"">
-	</form>
-
 	<h3>Classes:</h3>
 	<ul>
-		<li>App</li>
+		<li>App
+		</li>
 
 		<li>Controller</li>
 
@@ -62,7 +58,7 @@
 
 		<li>Hash
 			<ul>
-				<li>Password hashing
+				<li>String hashing
 					<pre>Hash::make('string');</pre> Returns hashed string.
 				</li>
 
