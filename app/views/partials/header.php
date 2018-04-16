@@ -10,6 +10,7 @@
 
 	<ul>
 		<li><a href="<?=URL?>/home">Home</a></li>
+		<li><a href="<?=URL?>/info">Info</a></li>
 	</ul>
 
 	<hr>
