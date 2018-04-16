@@ -34,4 +34,24 @@ class Info extends Controller {
 			}
 		});
     }
+
+    public function testDB() {
+        Request::method("GET", function() {
+            // Delete every single record in users table
+            Database::instance()->query('DELETE FROM users WHERE 1=1');
+
+            // Insert data into users table
+            $insert = Database::instance()->query('INSERT INTO users VALUES (:id, :name, :email, :password)',
+             ['id' => 0, 'name' => 'John Snow', 'email' => 'john@winterfell.com', 'password' => 'kinginthenorth93']);
+
+            if(!$insert->error()) {
+                // If no error, get the data and print it on the page
+                $result = Database::instance()->query('SELECT * FROM users WHERE name= :name',
+                 ['name' => 'John Snow'])->first();
+
+                echo "<pre>";
+                var_dump($result);
+            }
+        });
+    }
 }
