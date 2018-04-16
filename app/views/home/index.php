@@ -63,7 +63,7 @@
 
 		<li>Hash
 			<ul>
-				<li>Password hashing
+				<li>String hashing
 					<pre>Hash::make('string');</pre> Returns hashed string.
 				</li>
 

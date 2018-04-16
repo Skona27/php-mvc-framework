@@ -25,13 +25,13 @@ class Home extends Controller {
 			// Try to upload it
 			$file->upload();
 
-			// File::delete();
-
 			// Print error msg if error occured
 			if ($file->error()) {
 				echo $file->messageError();
 			} else {
 				echo "File uploaded!";
+				// Delete after upload
+				File::delete($file->name());
 			}
 		});
 	}
