@@ -1,3 +1,9 @@
 li {
-	padding: 2px;
+	padding: 3px;
+}
+
+pre {
+	background-color: #eee;
+	display: table;
+	padding: 5px;
 }

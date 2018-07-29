@@ -20,8 +20,8 @@ define('URL', 'http://localhost/php-mvc-framework');
 // Database params
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASS', 'root');
-define('DB_NAME', 'php-mvc-framework');
+define('DB_PASS', '');
+define('DB_NAME', 'framework');
 
 
 // File maximum size, in mb
@@ -37,14 +37,13 @@ define('FILE_EXT', array(
 // Root for the upload directory
 define('UPLOAD_ROOT', PUBLIC_ROOT.'/uploads');
 
-
+// Cookie expiry time in seconds
+define("COOKIE_EXPIRY", 7 * 86400);
 
 // Start session
 session_start();
 
-
-
 // Autoload classes
 spl_autoload_register(function ($class) {
-    require_once 'classes/' . $class . '.php';
+    require_once 'core/' . $class . '.php';
 });

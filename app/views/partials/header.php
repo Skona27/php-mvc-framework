@@ -11,8 +11,9 @@
 	<ul>
 		<li><a href="<?=URL?>/home">Home</a></li>
 		<li><a href="<?=URL?>/info">Info</a></li>
+        <li><a href="<?=URL?>/user">User</a></li>
 	</ul>
 
 	<hr>
 
-	<p>Active - <strong><?=$data['active']?></strong></p>
+<!--	<p>Active - <strong>--><?//=$data['active']?><!--</strong></p>-->
