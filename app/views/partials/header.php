@@ -15,5 +15,3 @@
 	</ul>
 
 	<hr>
-
-<!--	<p>Active - <strong>--><?//=$data['active']?><!--</strong></p>-->

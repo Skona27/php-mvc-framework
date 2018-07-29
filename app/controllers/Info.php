@@ -9,10 +9,8 @@ class Info extends Controller {
     public function index() {
         // This code will run after GET request to /info
         Request::method("GET", function() {
-            // Render the info/index template, pass the data
-            $this->view("info/index", 
-                ['active' => 'info/index']
-            );
+            // Render the info/index template
+            $this->view("info/index");
         });
 
         // This code will run after POST request to /info
