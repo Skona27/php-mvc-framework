@@ -16,7 +16,6 @@ What things you need to have installed on your local machine.
 PHP v.7
 
 Access to MySQL database as super user
-
 ```
 
 
@@ -31,7 +30,6 @@ A step by step series of examples that tell you how to get a development env run
 
 ```
 mysql db_name < DB.sql
-
 ```
 
 * Run web server and open the browser
