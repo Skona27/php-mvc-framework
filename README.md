@@ -1,7 +1,43 @@
 # php-mvc-framework
 
 Simple php framework using MVC pattern.
-### Classes:
+
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+
+### Prerequisites
+
+What things you need to have installed on your local machine.
+
+```
+PHP v.7
+
+Access to MySQL database as super user
+
+```
+
+
+### Installing
+
+A step by step series of examples that tell you how to get a development env running
+
+* Move all the files to your www root dir
+
+
+* Import database structure from DB.sql
+
+```
+mysql db_name < DB.sql
+
+```
+
+* Run web server and open the browser
+
+
+### Classes available:
 
 *   App
 *   Controller
@@ -116,3 +152,16 @@ Simple php framework using MVC pattern.
 
         If session exists, returns it's value, then unsets session. If no session, it puts a session with the name and value.
 *   Validation
+
+
+## Built wtih
+
+* PHP
+* MySQL
+
+
+## Authors
+
+* **Jakub Skoneczny** - *Initial work* - [Profile](https://github.com/Skona27)
+
+
